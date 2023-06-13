@@ -1,16 +1,19 @@
 @startuml
-:Cliente:
-(Meter dinero)
-(Pedir azucar)
-(Pedir producto)
-(Cancelar)
-(Devolver dinero)
+:Actor:
+(Identificarse)
+(Pagar)
+(Elegir mensajero)
+(Confirmar)
+(Registrarse)
+(Pagar con tarjeta)
+(Pagar con transferencia)
 
-Cliente--(Meter dinero)
-Cliente--(Pedir azucar)
-Cliente--(Pedir producto)
-Cliente--(Cancelar)
+Actor--(Identificarse)
+Actor--(Pagar)
+Actor--(Elegir mensajero)
+Actor--(Confirmar)
 
-(Cancelar)..(Devolver dinero) : include
-(Pedir producto)..(Devolver dinero) : include
+(Registrarse)..> (Identificarse) : extend
+(Pagar con tarjeta) --|> (Pagar)
+(Pagar con transferencia) --|> (Pagar)
 @enduml
