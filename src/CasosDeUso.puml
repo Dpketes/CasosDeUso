@@ -1,8 +1,16 @@
 @startuml
-(Pagar con efectivo)
-(Pagar con tarjeta)
-(Pagar)
+:Cliente:
+(Meter dinero)
+(Pedir azucar)
+(Pedir producto)
+(Cancelar)
+(Devolver dinero)
 
-(Pagar con tarjeta)--|>(Pagar)
-(Pagar con efectivo)--|>(Pagar)
+Cliente--(Meter dinero)
+Cliente--(Pedir azucar)
+Cliente--(Pedir producto)
+Cliente--(Cancelar)
+
+(Cancelar)..(Devolver dinero) : include
+(Pedir producto)..(Devolver dinero) : include
 @enduml
