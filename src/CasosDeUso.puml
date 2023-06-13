@@ -1,17 +1,15 @@
 @startuml
 left to right direction
 actor Cliente as cliente
-actor Restaurante as restau
 
-    Rectangle {
-        usecase "Pedir comida" as a1
-        usecase "Mostrar carta" as a2
-    }
+usecase "Cancelar_pedido" as a1
+usecase "Confirmar_pedido" as a2
 
-    usecase "Entregar comida" as a3
+cliente -- a1
+cliente -- a2
 
-    cliente -- a1
-    cliente -- a2
-    restau -- a2
-    restau -- a3
+usecase "Devolver_dinero" as a3
+
+a1 .. a3 : include
+a2 .. a3 : include
 @enduml
