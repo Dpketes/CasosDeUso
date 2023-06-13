@@ -1,15 +1,6 @@
 @startuml
-left to right direction
-actor Cliente as cliente
+(Acceder)
+(Registrarme)
 
-usecase "Cancelar_pedido" as a1
-usecase "Confirmar_pedido" as a2
-
-cliente -- a1
-cliente -- a2
-
-usecase "Devolver_dinero" as a3
-
-a1 .. a3 : include
-a2 .. a3 : include
+(Registrarme)..>(Acceder) : extend
 @enduml
