@@ -1,23 +1,16 @@
 @startuml
-:usuario:
-:Administrador:
+:ciudadano:
+:ciudadano2:
 
-(Iniciar sesion)
-(Recuperar contra)
-(Modificar contra)
-(Cerrar sesion)
-(Registrar usuario)
-(Instalar programa)
+(Registrar entrada)
+(Tomar huellas)
 
 
-usuario--(Iniciar sesion)
-usuario--(Recuperar contra)
-usuario--(Modificar contra)
-usuario--(Cerrar sesion)
+ciudadano--(Registrar entrada)
+ciudadano2--(Tomar huellas)
 
-Administrador --|> usuario
+(Tomar huellas) ..> (Registrar entrada) : extend
 
-Administrador -- (Registrar usuario)
-Administrador - (Instalar programa)
+ciudadano2 --|> ciudadano
 
 @enduml
