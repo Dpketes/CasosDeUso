@@ -1,3 +1,17 @@
 @startuml
-:Cliente: --(mostrar_menu)
+left to right direction
+actor Cliente as cliente
+actor Restaurante as restau
+
+    Rectangle {
+        usecase "Pedir comida" as a1
+        usecase "Mostrar carta" as a2
+    }
+
+    usecase "Entregar comida" as a3
+
+    cliente -- a1
+    cliente -- a2
+    restau -- a2
+    restau -- a3
 @enduml
